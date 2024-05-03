@@ -43,7 +43,7 @@ pipeline {
         stage('Integration Tests on Staging') {
             steps {
                 // Run integration tests on the staging environment using Selenium
-                echo 'Running integration tests on staging environment'
+                echo 'Running integration tests on staging environments'
             }
         }
 
