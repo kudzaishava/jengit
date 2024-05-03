@@ -8,7 +8,7 @@ pipeline {
             }
             post {
                 always {
-                    emailext attachLog: true,
+                    emailext 
                             body: 'Build log attached!',
                             subject: 'Build Status Email',
                             to: "klshava97@gmail.com"
@@ -22,7 +22,7 @@ pipeline {
             }
             post {
                 always {
-                    emailext attachLog: true,
+                    emailext 
                             body: 'Test results attached!',
                             subject: 'Test Status Email',
                             to: "klshava97@gmail.com"
