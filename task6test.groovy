@@ -1,26 +1,31 @@
-post {
-        success {
-            emailext body: "Build ${currentBuild.fullDisplayName} succeeded",
-                     subject: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - Successful",
-                     to: 'klshava97@gmail.com',
-                     attachLog: true
+pipeline {
+    agent any
+ 
+    stages {
+        stage('Test') {
+            steps {
+                // Your test commands
+            }
         }
-        failure {
-            emailext body: "Build ${currentBuild.fullDisplayName} failed",
-                     subject: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - Failed",
-                     to: 'klshava97@gmail.com',
-                     attachLog: true
-        }
-        unstable {
-            emailext body: "Build ${currentBuild.fullDisplayName} is unstable",
-                     subject: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - Unstable",
-                     to: 'klshava97@gmail.com',
-                     attachLog: true
-        }
-        always {
-            emailext body: "Build ${currentBuild.fullDisplayName} has finished with status ${currentBuild.currentResult}",
-                     subject: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
-                     to: 'klshava97@gmail.com',
-                     attachLog: true
+        stage('Security Scan') {
+            steps {
+                // Your security scan commands
+            }
         }
     }
+ 
+    post {
+        success {
+            emailext body: 'The ${currentBuild.fullDisplayName} was successful',
+                     subject: 'Jenkins Pipeline Success Notification',
+                     to: 'klshava97@gmail.com',
+                    attachLog: true
+        }
+        failure {
+            emailext body: 'The ${currentBuild.fullDisplayName} failed',
+                     subject: 'Jenkins Pipeline Failure Notification',
+                     to: 'klshava97@gmail.com',
+                    attachLog: true
+        }
+    }
+}
