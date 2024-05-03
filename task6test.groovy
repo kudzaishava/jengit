@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                // Your test commands
+                echo 'AH'
             }
         }
         stage('Security Scan') {
             steps {
-                // Your security scan commands
+                echo 'AH'
             }
         }
     }
