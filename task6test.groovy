@@ -22,7 +22,7 @@ pipeline {
             }
             post {
                 always {
-                    
+                    emailext attachLog: false,
                             body: 'Test results attached!',
                             subject: 'Test Status Email',
                             to: "klshava97@gmail.com"
