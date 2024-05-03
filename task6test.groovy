@@ -11,7 +11,7 @@ pipeline {
                     emailext attachLog: true,
                             body: 'Build log attached!',
                             subject: 'Build Status Email',
-                            to: "azadehghneiat@gmail.com"
+                            to: "klshava97@gmail.com"
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
                     emailext attachLog: true,
                             body: 'Test results attached!',
                             subject: 'Test Status Email',
-                            to: "azadehghneiat@gmail.com"
+                            to: "klshava97@gmail.com"
                 }
             }
         }
