@@ -8,14 +8,10 @@ pipeline {
             }
             post {
                 always {
-                    mail bcc: '',
-                         body: 'Build log attached!',
-                         cc: '',
-                         from: '',
-                         replyTo: '',
-                         subject: 'Build Status Email',
-                         to: "klshava97@gmail.com",
-                         attachLog: true
+                    emailext attachLog: true,
+                            body: 'Build log attached!',
+                            subject: 'Build Status Email',
+                            to: "azadehghneiat@gmail.com"
                 }
             }
         }
@@ -26,16 +22,13 @@ pipeline {
             }
             post {
                 always {
-                    mail bcc: '',
-                         body: 'Test results attached!',
-                         cc: '',
-                         from: '',
-                         replyTo: '',
-                         subject: 'Test Status Email',
-                         to: "klshava97@gmail.com",
-                         attachLog: true
+                    emailext attachLog: true,
+                            body: 'Test results attached!',
+                            subject: 'Test Status Email',
+                            to: "azadehghneiat@gmail.com"
                 }
             }
         }
+
     }
 }
